@@ -1,5 +1,4 @@
 name: 构建XIAOMI14 pro内核
-
 env:
   TZ: Asia/Shanghai
   CPU: 'sm8650'
