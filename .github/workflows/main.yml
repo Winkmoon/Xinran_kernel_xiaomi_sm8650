@@ -103,15 +103,6 @@ jobs:
             python-is-python3 bc libssl-dev libelf-dev \
             bc aria2 zip unzip ccache
             
-      - name: Set up swap space
-        run: |
-          sudo fallocate -l 20G /swapfile
-          sudo chmod 0600 /swapfile
-          sudo mkswap /swapfile
-          sudo swapon /swapfile
-          echo "Swap status after setup:"
-          swapon --show
-          free -h
         shell: bash
 
       - name: 配置ccache目录
