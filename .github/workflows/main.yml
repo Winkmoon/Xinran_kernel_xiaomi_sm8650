@@ -103,6 +103,13 @@ jobs:
             python-is-python3 bc libssl-dev libelf-dev \
             bc aria2 zip unzip ccache
 
+      - name: 配置swap
+        run: |  
+          sudo fallocate -l 20G /swapfile
+          sudo mkswap /swapfile && sudo swapon /swapfile
+          sudo swapoff /swapfile && sudo rm /swapfile
+          echo "完成！"
+
       - name: 配置ccache目录
         run: |
           echo "CCACHE_DIR=$HOME/.ccache_6.1.147" >> $GITHUB_ENV
