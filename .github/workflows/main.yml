@@ -155,6 +155,7 @@ jobs:
           cd kernel_workspace
           echo "正在克隆源码仓库..."
           git clone --depth=1 https://github.com/Winkmoon/Xinran_kernel_xiaomi_sm8650.git -b android14-6.1-v common
+          rm -rf ./common/drivers/ksu
           
           echo "正在克隆llvm-Clang20工具链..." &&
           mkdir -p clang20 &&
